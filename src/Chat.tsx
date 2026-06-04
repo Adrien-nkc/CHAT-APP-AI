@@ -31,11 +31,14 @@ function Chat() {
     setInput("");
     setIsLoading(true);
 
-    const response = await fetch("http://127.0.0.1:8000/chat", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ message: input }),
-    });
+    const response = await fetch(
+      "https://chat-app-ai-production.up.railway.app/chat",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: input }),
+      },
+    );
 
     const data = await response.json();
 
