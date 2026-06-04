@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply min-h-screen bg-[#1f1f1e];
+  }
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-[#323232];
+  }
+}
+
+@layer components {
+  .chat-title {
+    @apply text-white text-2xl font-bold text-center py-4 px-6 bg-[#121212] backdrop-blur-xl sticky top-0 z-10;
+  }
+
+  .messages-area {
+    @apply flex flex-col gap-2 px-4 pt-4 pb-24 overflow-y-auto;
+  }
+
+  .message-bubble {
+    @apply bg-[#121212]  text-white px-4 p-10 rounded-2xl rounded-tl-sm max-w-xs mb-2 text-sm backdrop-blur-sm ml-auto;
+  }
+
+  .message-bubble-ai {
+    @apply text-white px-4 p-10 rounded-2xl rounded-tr-sm max-w-xl mb-2 text-sm backdrop-blur-sm;
+  }
+
+  .input-row {
+    @apply fixed bottom-0 left-0 right-0 flex gap-2 px-4 py-4 bg-[#121212] backdrop-blur-xl;
+  }
+
+  .chat-input {
+    @apply flex-1 bg-[#121212]  text-white placeholder-slate-400 rounded-2xl px-4 py-3 text-sm outline-none focus:ring-1 focus:ring-[#121212] transition;
+  }
+
+  .send-button {
+    @apply bg-[#121212] hover:bg-[#121212] text-white font-semibold px-5 py-3 rounded-2xl text-sm transition-all active:scale-150 cursor-pointer;
+  }
+}
